@@ -1,0 +1,8 @@
+<h1>Create a new phone</h1>
+<%= form_with model: @phone do |form| %>
+  <%= form.label "phone brand" %>
+  <%= form.text_field :pbrand %><br>
+  <%= form.label "phone model" %>
+  <%= form.text_field :pmodel %><br>
+  <%= form.submit %>
+<% end %>
