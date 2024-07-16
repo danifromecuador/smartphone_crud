@@ -10,7 +10,8 @@ class PhonesController < ApplicationController
   def create
     @phone = Phone.new(phone_params)
     if @phone.save
-      redirect_to "/"
+      redirect_to "/phones"
+    else render "/phones/new", status: :unprocessable_entity
     end
   end
 
