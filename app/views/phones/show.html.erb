@@ -5,3 +5,9 @@ Model:<%= @phone.pmodel %><br>
 <br>
 <%= link_to "return", "/phones" %>
 <%= link_to "edit", "/phones/#{@phone.id}/edit" %>
+<%= link_to "delete", "/phones/#{@phone.id}",
+  data: { 
+    turbo_method: :delete,
+    turbo_confirm: "Are you really sure?"
+  }
+%>

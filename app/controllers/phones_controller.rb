@@ -29,6 +29,12 @@ class PhonesController < ApplicationController
     else render :edit, status: :unprocessable_entity     end
   end
 
+  def destroy
+    @phone = Phone.find(params[:id])
+    @phone.destroy
+    redirect_to "/phones"
+  end
+
   private
 
   def phone_params
