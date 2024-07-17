@@ -1,0 +1,20 @@
+<h1>Edit phone</h1>
+<%= form_with model: @phone do |form| %>
+  <%= form.label "phone brand" %>
+  <%= form.text_field :pbrand %>
+  <% @phone.errors.full_messages_for(:pbrand).each do |message| %>
+    <%= message.sub("Pbrand", "Brand") %>
+  <% end %>
+  <br>
+  <br>
+  <%= form.label "phone model" %>
+  <%= form.text_field :pmodel %>
+  <% @phone.errors.full_messages_for(:pmodel).each do |message| %>
+    <%= message.sub("Pmodel", "Model") %>
+  <% end %>
+  <br>
+  <br>
+  <%= form.submit %>
+<% end %>
+<br>
+<br>
