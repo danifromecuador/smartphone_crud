@@ -15,8 +15,18 @@ class PhonesController < ApplicationController
     @phone = Phone.new(phone_params)
     if @phone.save
       redirect_to "/phones"
-    else render "/phones/new", status: :unprocessable_entity
-    end
+    else render "/phones/new", status: :unprocessable_entity     end
+  end
+
+  def edit
+    @phone = Phone.find(params[:id])
+  end
+
+  def update
+    @phone = Phone.find(params[:id])
+    if @phone.update(phone_params)
+      redirect_to "/phones"
+    else render :edit, status: :unprocessable_entity     end
   end
 
   private
