@@ -1,9 +1,7 @@
 <h1>Phone Index</h1>
-
 <ul>
   <% @phones.each do |phone| %>
-    <li><%= phone.pbrand %><%= phone.pmodel %></li>
+    <li><%= phone.pbrand %>...<%= phone.pmodel %><%= link_to "details", "/phones/#{phone.id}" %></li>
   <% end %>
 </ul>
-
 <%= link_to "new", "/phones/new" %>

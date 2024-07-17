@@ -3,6 +3,10 @@ class PhonesController < ApplicationController
     @phones = Phone.all
   end
 
+  def show
+    @phone = Phone.find(params[:id])
+  end
+
   def new
     @phone = Phone.new
   end
